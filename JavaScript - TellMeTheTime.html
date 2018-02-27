@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>JavaScript!</title>
+   </head>
+   <body>
+
+      <script>
+         
+
+
+         function TellMeTheTime()
+         {
+            var HOUR = "4";
+            var MINUTE = "30";
+            var PERIOD = "PM";
+            
+            while(isNaN(MINUTE) === true || isNaN(HOUR) === true)
+            {
+               console.log("That's not even a number!!!")
+               return;
+            }
+            if(MINUTE === "15")
+            {
+               b = "a quarter after";
+            }
+            else if(MINUTE < 30 && MINUTE !== "15" && MINUTE !== "00")
+            {
+               b = "just after";
+            }
+            else if(MINUTE === "45")
+            {
+               if(HOUR === "12")
+               {
+                  HOUR = "1";
+                  b = "a quarter til";
+               }
+               else
+               {
+                  b = "a quarter til";
+                  HOUR = HOUR + 1;
+               }
+            }
+            else if(MINUTE > 30)
+            {
+               b = "almost";
+               if(HOUR === "12")
+               {
+                  HOUR = "1";
+               }
+               else
+               {
+                  HOUR = HOUR + 1;
+               }
+            }
+            else if(MINUTE === "30")
+            {
+               b = "half past";
+            }
+            else if (MINUTE === "00" && HOUR === "12")
+            {
+               b = "exactly";
+            }
+            else
+            {
+               console.log("Don't play with my emotions!!! ** sad face **")
+            }
+            while(PERIOD === "PM" && HOUR === "12" && MINUTE == "00")
+            {
+               c = "noon.";
+               
+               {break};
+            }
+            if(PERIOD === "PM" && HOUR < "6" && HOUR !== "12")
+            {
+               c = "in the afternoon."
+            }
+            else if(PERIOD === "PM" && HOUR >= "6" && HOUR < "8")
+            {
+               c = "in the evening."
+            }
+            else if(PERIOD === "PM" && HOUR >= "8" && HOUR !== "12")
+            {
+               c = "at night."
+            }
+            else if(PERIOD === "AM" && HOUR === "12")
+            {
+               c = "midnight."
+            }
+            else if(PERIOD === "AM")
+            {
+               c = "in the morning."
+            }
+            else if(HOUR !== "12")
+            {
+               c = "in space and time..."
+            }
+         
+            console.log("It's", b, HOUR, c)
+         }
+
+         TellMeTheTime();
+
+      </script>
+
+   </body>
+</html>
